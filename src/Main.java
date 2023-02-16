@@ -4,54 +4,53 @@ import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) {
-        MyStringList myStringList = new MyStringList(5);
-        MyStringList myStringList2 = new MyStringList(5);
-        myStringList2.add("one");
-        myStringList2.add("two");
-        myStringList2.add("three");
-        myStringList2.add("four");
-        myStringList2.add("five");
+        MyIntegerList myIntegerList = new MyIntegerList(10);
+        MyIntegerList myIntegerList2 = new MyIntegerList(10);
 
+        myIntegerList.add(1);
+        myIntegerList.add(2);
+        myIntegerList.add(3);
+        myIntegerList.add(4);
+        myIntegerList.add(5);
+
+        myIntegerList2.add(1);
+        myIntegerList2.add(2);
+        myIntegerList2.add(3);
 // Метод 1
-        myStringList.add("one");
-        myStringList.add("two");
-        myStringList.add("three");
-        myStringList.add("four");
-        myStringList.add("five");
-        System.out.println(myStringList);
+        System.out.println(myIntegerList);
 //// Метод 2
-        myStringList.add(3, "try");
-        System.out.println(myStringList);
+        myIntegerList.add(3, 77);
+        System.out.println(myIntegerList);
 ////// Метод 3
-        myStringList.set(3, "try2");
-        System.out.println(myStringList);
-//// Метод 4
+        myIntegerList.set(3, 55);
+        System.out.println(myIntegerList);
+////// Метод 4
         System.out.println("Метод 4");
-        myStringList.remove("three");
-        System.out.println(myStringList);
-//// Метод 5
-        myStringList.remove(0);
-        System.out.println(myStringList);
-//// Метод 6
+        myIntegerList.remove(4);
+        System.out.println(myIntegerList);
+////// Метод 5
+        myIntegerList.remove(4);
+        System.out.println(myIntegerList);
+////// Метод 6
         System.out.println("Метод 6");
-        System.out.println(myStringList.contains("try2"));
-// // Метод 7
-        System.out.println(myStringList.indexOf("five"));
-//// Метод 8
-        System.out.println(myStringList.lastIndexOf("five"));
-//// Метод 9  get ( int index){
+        System.out.println(myIntegerList.contains(3));
+//// // Метод 7
+        System.out.println(myIntegerList.indexOf(2));
+////// Метод 8
+        System.out.println(myIntegerList.lastIndexOf(2));
+////// Метод 9  get ( int index){
         System.out.println("Метод 9");
-        System.out.println(myStringList.get(2));
-// Метод 10 equals
-        System.out.println(myStringList2.equals(myStringList));
-// Метод 11 size ()
-        System.out.println(myStringList.size());
-// Метод 12 isEmpty
-        System.out.println(myStringList.isEmpty());
-// Метод 13 clear
-//        myStringList.clear();
-//        System.out.println(myStringList);
- // Метод 14 String[] toArray ()
-        System.out.println(Arrays.toString(myStringList.toArray()));
+        System.out.println(myIntegerList.get(2));
+//// Метод 10 equals
+        System.out.println(myIntegerList.equals(myIntegerList2));
+//// Метод 11 size ()
+        System.out.println(myIntegerList.size());
+//// Метод 12 isEmpty
+        System.out.println(myIntegerList.isEmpty());
+//// Метод 13 clear
+//        myIntegerList.clear();
+//        System.out.println(myIntegerList);
+// // Метод 14 Integer[] toArray ()
+          System.out.println(Arrays.toString(myIntegerList.toArray()));
     }
 }
