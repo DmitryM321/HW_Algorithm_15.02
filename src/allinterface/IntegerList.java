@@ -1,3 +1,5 @@
+package allinterface;
+
 public interface IntegerList <Integer> {
 
      Integer add(Integer item);

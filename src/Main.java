@@ -1,9 +1,46 @@
-import java.util.ArrayList;
+import lists.MyIntegerList;
 import java.util.Arrays;
-import java.util.Objects;
+import java.util.Random;
+import static lists.MyIntegerList.contains2;
+import static lists.MyIntegerList.sortInsertion2;
+import static testMetods.TestMetods.sortInsertion;
 
 public class Main {
     public static void main(String[] args) {
+
+        Random random = new Random();
+        int[] arr = new int[100000];
+        for (int i = 0; i <arr.length; i++) {
+            arr[i] = random.nextInt();
+        }
+        int[] arr2 = Arrays.copyOf(arr, arr.length);
+        int[] arr3 = Arrays.copyOf(arr, arr.length);
+// Выбор самого быстрого метода
+//        long start = System.currentTimeMillis();
+//        sortBubble(arr);
+//        System.out.println(System.currentTimeMillis() - start + " Пузырьковая сортировка");
+//
+//        long start2 = System.currentTimeMillis();
+//        sortSelection(arr2);
+//        System.out.println(System.currentTimeMillis() - start2 + " Сортировка выбором");
+
+        long start3 = System.currentTimeMillis();
+        sortInsertion(arr3);
+        System.out.println(System.currentTimeMillis() - start3 + " Сортировка вставкой");
+
+       // создание массива
+        int[] myIntegerList4 = new int[100000];
+        for (int i = 0; i <arr.length; i++) {
+            arr[i] = random.nextInt();
+        }
+        // запуск метода sortInsertion2 нашего класса
+        long start4 = System.currentTimeMillis();
+        sortInsertion2(myIntegerList4);
+        System.out.println(System.currentTimeMillis() - start4 + " Сортировка вставкой");
+        // запуск нового метода бинароного поиска contains2
+        System.out.println(contains2(myIntegerList4, 33333));
+
+
         MyIntegerList myIntegerList = new MyIntegerList(10);
         MyIntegerList myIntegerList2 = new MyIntegerList(10);
 

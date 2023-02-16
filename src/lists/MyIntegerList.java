@@ -1,3 +1,7 @@
+package lists;
+
+import allinterface.IntegerList;
+
 import java.util.Arrays;
 
 import static java.lang.System.arraycopy;
@@ -24,9 +28,6 @@ public class MyIntegerList implements IntegerList<Integer> {
     int capacity1 = list.length;
     if(capacity > capacity1){
         int newCapacity = capacity1 * 2;
-        if(newCapacity < capacity){
-            newCapacity = capacity;
-        }
         list = Arrays.copyOf(list, newCapacity);
     }
     }
@@ -141,9 +142,37 @@ public class MyIntegerList implements IntegerList<Integer> {
         public Integer[] toArray () {
             return Arrays.copyOf(list, size);
         }
+
+        public static void sortInsertion2(int[] arr) { // Сортировка вставкой
+            for (int i = 1; i < arr.length; i++) {
+                int temp = arr[i];
+                int j = i;
+                while (j > 0 && arr[j - 1] >= temp) {
+                    arr[j] = arr[j - 1];
+                    j--;
+                }
+                arr[j] = temp;
+            }
+        }
+    public static boolean contains2(int[] arr, int element) {
+        int min = 0;
+        int max = arr.length - 1;
+        while (min <= max) {
+            int mid = (min + max) / 2;
+            if (element == arr[mid]) {
+                return true;
+            }
+            if (element < arr[mid]) {
+                max = mid - 1;
+            } else {
+                min = mid + 1;
+            }
+        }
+        return false;
+    }
         @Override
         public String toString () {
-            return "MyStringList{" +
+            return "lists.MyStringList{" +
                     "array=" + Arrays.toString(list) +
                     ", size=" + size +
                     '}';

@@ -1,3 +1,7 @@
+package lists;
+
+import allinterface.StringList;
+
 import java.util.Arrays;
 public class MyStringList implements StringList {
     private static final int DEFAULT_CAPACITY = 10;
@@ -29,6 +33,7 @@ public class MyStringList implements StringList {
     }
     @Override
     public String add(String item) {
+        examCapacity(size + 1);
         if (list[list.length - 1] != null) {
             String[] newList = new String[list.length * 2];
             System.arraycopy(list, 0, newList, 0, list.length);
@@ -36,15 +41,13 @@ public class MyStringList implements StringList {
         }
         return list[size++] = item;
     }
+
     @Override
     public String add(int index, String item) {
-        examCapacity(size + 1);
-        System.arraycopy(list, index, list, index + 1, size - index);
-        list[index] = item;
-        size++;
-        return item;
+        return null;
     }
-    @Override
+
+       @Override
     public String set(int index, String item) {
         mistakeFind(index);
         String string1 = list[index];
@@ -137,7 +140,7 @@ public class MyStringList implements StringList {
         }
         @Override
         public String toString () {
-            return "MyStringList{" +
+            return "lists.MyStringList{" +
                     "array=" + Arrays.toString(list) +
                     ", size=" + size +
                     '}';
