@@ -18,6 +18,7 @@ public class Main {
         quickSort(arr, begin, end);
         System.out.println(System.currentTimeMillis() - start5 + " рекурсивная сортировка");
         System.out.println("");
+
     //    System.out.println(Arrays.toString(arr));
 
         MyIntegerList myIntegerList = new MyIntegerList(10);
